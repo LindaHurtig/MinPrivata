@@ -6,13 +6,16 @@ public class Person {
 	
 	String namn;
 	String adress;
-	int mobilNr;
+	long mobilNr;
 	
-	protected Person(String namn, String adress, int mobilNr) {
-		super();
+	protected Person(String namn, String adress, long mobilNr) {
 		this.namn = namn;
 		this.adress = adress;
 		this.mobilNr = mobilNr;
+	}
+
+	public Person() {
+		
 	}
 
 	public String getNamn() {
@@ -31,11 +34,11 @@ public class Person {
 		this.adress = adress;
 	}
 
-	public double getMobilNr() {
+	public long getMobilNr() {
 		return mobilNr;
 	}
 
-	public void setMobilNr(int mobilNr) {
+	public void setMobilNr(long mobilNr) {
 		this.mobilNr = mobilNr;
 	}
 	
