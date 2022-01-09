@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import varor.Vara;
 
-public class Varukorg  {
+public class Varukorg {
 
 	private static List<Vara> iVarukorg = new ArrayList<Vara>();
 
@@ -71,7 +71,7 @@ public class Varukorg  {
 		float momsIDec = ((float) vara.getMomsSats() / 100);
 		float momsIKr = (vara.getNettoPris() * momsIDec);
 
-		float prisMoms = vara.getNettoPris() + momsIKr ;
+		float prisMoms = vara.getNettoPris() + momsIKr;
 
 		return prisMoms;
 
@@ -100,44 +100,44 @@ public class Varukorg  {
 	}
 
 	void sorteraVaraNamn() {
-	
+
 		Collections.sort(iVarukorg, new JfrVarorNamn());
 	}
 
 	void sorteraVaraPris() {
-		
-		Collections.sort(iVarukorg,new JfrVarorPris());
+
+		Collections.sort(iVarukorg, new JfrVarorPris());
 
 	}
-	
+
 	void sorteraVaraMoms() {
-		
-		Collections.sort(iVarukorg,new JfrVarorMoms());
 
-	}
+		Collections.sort(iVarukorg, new JfrVarorMoms());
 
-
-}
-class JfrVarorPris implements Comparator<Vara>{
-
-	public int compare(Vara o1, Vara o2) {
-	return (int) (o1.getNettoPris() - o2.getNettoPris());
 	}
 
 }
 
-class JfrVarorMoms implements Comparator<Vara>{
+class JfrVarorPris implements Comparator<Vara> {
 
 	public int compare(Vara o1, Vara o2) {
-	return (int) (o1.getMomsSats() - o2.getMomsSats());
-	}
-	
-}	
-	class JfrVarorNamn implements Comparator<Vara>{
-		
-		public int compare(Vara o1, Vara o2) {
-			return o1.getVaraNamn().compareTo(o2.getVaraNamn());
-		}
-
+		return (int) (o1.getNettoPris() - o2.getNettoPris());
 	}
 
+}
+
+class JfrVarorMoms implements Comparator<Vara> {
+
+	public int compare(Vara o1, Vara o2) {
+		return (int) (o1.getMomsSats() - o2.getMomsSats());
+	}
+
+}
+
+class JfrVarorNamn implements Comparator<Vara> {
+
+	public int compare(Vara o1, Vara o2) {
+		return o1.getVaraNamn().compareTo(o2.getVaraNamn());
+	}
+
+}

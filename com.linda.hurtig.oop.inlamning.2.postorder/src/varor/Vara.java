@@ -1,7 +1,5 @@
 package varor;
 
-import java.util.Objects;
-
 import varukorg.Varukorg;
 
 public class Vara {
@@ -83,18 +81,5 @@ public class Vara {
 		return vara;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Vara other = (Vara) obj;
-		return artNr == other.artNr && kop == other.kop && momsSats == other.momsSats
-				&& Float.floatToIntBits(nettoPris) == Float.floatToIntBits(other.nettoPris)
-				&& Objects.equals(varaNamn, other.varaNamn);
-	}
 
 }

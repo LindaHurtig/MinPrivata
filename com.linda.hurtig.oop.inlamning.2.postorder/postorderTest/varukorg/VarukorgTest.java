@@ -31,7 +31,8 @@ class VarukorgTest {
 	@Test
 	void testGetIVarukorg() {
 
-		assertEquals("[varor.Vara@23eff2d2, varor.Vara@eae7fdb5, varor.Vara@1a51b145, varor.Vara@23eff2d2, varor.Vara@1a51b145, varor.Vara@746d37e]",
+		assertEquals(
+				"[4 Plåt 150,00 25 , 2 Majs 12,00 12 , 1 Lego 100,00 25 , 4 Plåt 150,00 25 , 1 Lego 100,00 25 , 3 Örter 25,00 12 ]",
 				varukorg1.getiVarukorg().toString());
 
 	}
@@ -57,16 +58,17 @@ class VarukorgTest {
 
 	@Test
 	void testlaggiVarukorg() {
-		
-		
+
 		Varukorg.laggiVarukorg(true, vara4);
 		Varukorg.laggiVarukorg(true, vara2);
 		Varukorg.laggiVarukorg(true, vara);
 		Varukorg.laggiVarukorg(true, vara4);
 		Varukorg.laggiVarukorg(true, vara);
 		Varukorg.laggiVarukorg(true, vara3);
-		
-		assertEquals("[varor.Vara@23eff2d2, varor.Vara@eae7fdb5, varor.Vara@1a51b145, varor.Vara@23eff2d2, varor.Vara@1a51b145, varor.Vara@746d37e]", varukorg1.getiVarukorg().toString());
+
+		assertEquals(
+				"[4 Plåt 150,00 25 , 2 Majs 12,00 12 , 1 Lego 100,00 25 , 4 Plåt 150,00 25 , 1 Lego 100,00 25 , 3 Örter 25,00 12 ]",
+				varukorg1.getiVarukorg().toString());
 
 	}
 
@@ -75,14 +77,20 @@ class VarukorgTest {
 
 		varukorg1.sorteraVaraNamn();
 
+		assertEquals(
+				"[1 Lego 100,00 25 , 1 Lego 100,00 25 , 2 Majs 12,00 12 , 4 Plåt 150,00 25 , 4 Plåt 150,00 25 , 3 Örter 25,00 12 ]",
+				varukorg1.getiVarukorg().toString());
+
 	}
 
 	@Test
-	static
-
-			void testsorteraVaraPris() {
+	static void testsorteraVaraPris() {
 
 		varukorg1.sorteraVaraPris();
+
+		assertEquals(
+				"[2 Majs 12,00 12 , 3 Örter 25,00 12 , 1 Lego 100,00 25 , 1 Lego 100,00 25 , 4 Plåt 150,00 25 , 4 Plåt 150,00 25 ]",
+				varukorg1.getiVarukorg().toString());
 
 	}
 
@@ -90,6 +98,10 @@ class VarukorgTest {
 	static void testsorteraVaraMoms() {
 
 		varukorg1.sorteraVaraMoms();
+
+		assertEquals(
+				"[2 Majs 12,00 12 , 3 Örter 25,00 12 , 1 Lego 100,00 25 , 1 Lego 100,00 25 , 4 Plåt 150,00 25 , 4 Plåt 150,00 25 ]",
+				varukorg1.getiVarukorg().toString());
 
 	}
 
